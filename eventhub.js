@@ -1,13 +1,13 @@
 ;(function ()
 {
-    EventManager = function ()
+    var EventHub = function ()
     {
         this._listeners = {}
         this._one = {}
         this._late = {}
         this._all = []
     }
-    EventManager.prototype =
+    EventHub.prototype =
     {
         /* Add a listener to an event */
         on: function (name, callback)
@@ -208,11 +208,11 @@
     }
     
     /**
-     * Turn an object into an EventManager instance.
+     * Turn an object into an EventHub instance.
      */
-    EventManager.mixin = function (obj)
+    EventHub.mixin = function (obj)
     {
-        obj._event_manager = new EventManager()
+        obj._event_manager = new EventHub()
         
         for (var n in obj._event_manager)
         {
@@ -223,14 +223,23 @@
         }
     }
     
-    this.EventManager = EventManager
-    
     if (typeof define != 'undefined')
     {
-        define('EventManager', EventManager)
+        define('EventHub', EventHub)
     }
     else if (typeof module != 'undefined' && module.exports)
     {
-        module.exports = EventManager
+        module.exports = EventHub
+    }
+    else if (typeof angular != 'undefined')
+    {
+        angular.module('eventhub').factory('EventHub', function ()
+        {
+            return EventHub
+        })
+    }
+    else
+    {
+        this.EventHub = EventHub
     }
 })()

@@ -9,7 +9,7 @@ test('Simple events', function ()
     var counter = new Counter()
     ok(counter.i == 0, 'Counter is zero')
     
-    var hub = new EventManager()
+    var hub = new EventHub()
     hub.on('foo', counter.inc)
     hub.fire('foo')
     equal(counter.i, 1, "Event fired once")
@@ -38,7 +38,7 @@ test('Simple events', function ()
 test('Multiple event registration', function ()
 {
     var counter = new Counter(),
-        hub = new EventManager()
+        hub = new EventHub()
     
     hub.on('foo bar baz', counter.inc)
     hub.fire('foo')
@@ -59,7 +59,7 @@ test('One time events', function ()
 {
     var counter1 = new Counter(),
         counter2 = new Counter(),
-        hub = new EventManager()
+        hub = new EventHub()
     
     hub.on('you-only-live', counter1.inc)
     hub.one('you-only-live', counter2.inc)
@@ -76,7 +76,7 @@ test('One time events', function ()
 test('Late events', function ()
 {
     var counter = new Counter(),
-        hub = new EventManager()
+        hub = new EventHub()
     
     hub.fire('white-rabbit')
     equal(counter.i, 0, "Did not call unregistered listener")
@@ -91,7 +91,7 @@ test('Late events', function ()
 test('Catch-all listener', function ()
 {
     var counter = new Counter(),
-        hub = new EventManager()
+        hub = new EventHub()
         
     hub.all(counter.inc)
     hub.fire('there')
@@ -105,7 +105,7 @@ test('Mixin', function ()
 {
     expect(1)
     var obj = new Object()
-    EventManager.mixin(obj)
+    EventHub.mixin(obj)
     obj.on('foo', function ()
     {
         ok(true, 'Called a registered listener')
