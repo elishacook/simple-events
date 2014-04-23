@@ -223,22 +223,28 @@
         }
     }
     
+    var foundLoader = false
+    
     if (typeof define != 'undefined')
     {
         define('EventHub', EventHub)
+        foundLoader = true
     }
-    else if (typeof module != 'undefined' && module.exports)
+    if (typeof module != 'undefined' && module.exports)
     {
         module.exports = EventHub
+        foundLoader = true
     }
-    else if (typeof angular != 'undefined')
+    if (typeof angular != 'undefined')
     {
         angular.module('eventhub').factory('EventHub', function ()
         {
             return EventHub
         })
+        foundLoader = true
     }
-    else
+    
+    if (!foundLoader)
     {
         this.EventHub = EventHub
     }
