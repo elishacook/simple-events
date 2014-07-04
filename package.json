@@ -1,0 +1,19 @@
+{
+  "name": "eventhub.js",
+  "version": "0.3.0",
+  "description": "A simple event publisher",
+  "main": "eventhub.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/elishacook/eventhub.js.git"
+  },
+  "author": "Elisha Fitch-Cook <elisha@elishacook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elishacook/eventhub.js/issues"
+  },
+  "homepage": "https://github.com/elishacook/eventhub.js"
+}

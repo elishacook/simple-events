@@ -243,6 +243,11 @@
         })
         foundLoader = true
     }
+    if (typeof depin != 'undefined')
+    {
+        depin.define('EventHub', function () { return EventHub })
+        foundLoader = true
+    }
     
     if (!foundLoader)
     {

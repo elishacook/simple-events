@@ -12,4 +12,4 @@ You can install using bower
 bower install eventhub.js
 ```
 
-Eventhub will register itself using AMD, Node and/or AngularJS. If none of those environments are found it will be available as a global. If you are using angular, depend on the `eventhub` module and inject the `EventHub` class.
+Eventhub will register itself using AMD, Node, AngularJS and/or [depin](https://github.com/elishacook/depin). If none of those environments are found it will be available as a global. If you are using angular, depend on the `eventhub` module and inject the `EventHub` class.
