@@ -1,7 +1,7 @@
 {
   "name": "eventhub.js",
   "main": "./eventhub.js",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/elishacook/eventhub.js",
   "description": "A simple hub for events",
   "moduleType": [
