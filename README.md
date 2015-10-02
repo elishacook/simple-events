@@ -24,7 +24,7 @@ foobar.emit('stuff', 10) // 20
 You can install using npm.
 
 ```
-npm install simple-events
+npm install @elishacook/simple-events
 ```
 
 [1]: https://secure.travis-ci.org/elishacook/simple-events.svg
