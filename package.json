@@ -4,8 +4,7 @@
   "description": "A simple event publisher",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests.js",
-    "test-travis": "istanbul cover _mocha -- tests.js echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
+    "test": "mocha tests.js"
   },
   "repository": {
     "type": "git",
