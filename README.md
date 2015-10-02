@@ -1,4 +1,4 @@
-# EventHub
+# SimpleEvents
 
 [![Build Status][1]][2]
 
