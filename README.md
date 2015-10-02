@@ -1,15 +1,33 @@
 # EventHub
 
-EventHub is a small, simple, well...uh, event manager. It does not support DOM events. It is intended to be used as a notification center for an application or to add event management behaviors to other objects. It is similar to jQuery in use. For instance, `obj.on('foo bar', some_fn)` will call `some_fn` when either `"foo"` or `"bar"` are fired on `obj`.
+[![Build Status][1]][2] [![NPM version][3]][4]
 
-Have a look at the unit tests for usage examples.
+`.on`, `.off`, `.once`, etc. Have a look at the unit tests for usage examples.
+
+Can be easily used as a mixin:
+
+```js
+var SimpleEvents = require('simple-events')
+
+var FooBar = function ()
+{
+    SimpleEvents.mixin(this)
+}
+
+var foobar = new FooBar()
+foobar.on('stuff', function (x) { console.log(x + 10) })
+foobar.emit('stuff', 10) // 20
+```
 
 ## Install
 
-You can install using bower
+You can install using npm.
 
 ```
-bower install eventhub.js
+npm install simple-events
 ```
 
-Eventhub will register itself using AMD, Node, AngularJS and/or [depin](https://github.com/elishacook/depin). If none of those environments are found it will be available as a global. If you are using angular, depend on the `eventhub` module and inject the `EventHub` class.
+[1]: https://secure.travis-ci.org/elishacook/simple-events.svg
+[2]: https://travis-ci.org/elishacook/simple-events
+[3]: https://badge.fury.io/js/simple-events.svg
+[4]: https://badge.fury.io/js/simple-events

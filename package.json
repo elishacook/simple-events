@@ -1,19 +1,25 @@
 {
-  "name": "eventhub.js",
-  "version": "0.3.2",
+  "name": "@elishacook/simple-events",
+  "version": "0.4.0",
   "description": "A simple event publisher",
-  "main": "eventhub.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests.js",
+    "test-travis": "istanbul cover _mocha -- tests.js echo \"\nCoverage report is available at ./coverage/lcov-report/index.html\""
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/elishacook/eventhub.js.git"
+    "url": "git://github.com/elishacook/simple-events.git"
   },
   "author": "Elisha Fitch-Cook <elisha@elishacook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/elishacook/eventhub.js/issues"
+    "url": "https://github.com/elishacook/simple-events/issues"
   },
-  "homepage": "https://github.com/elishacook/eventhub.js"
+  "homepage": "https://github.com/elishacook/simple-events",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "istanbul": "^0.3.21",
+    "mocha": "^2.3.3"
+  }
 }
